@@ -56,23 +56,23 @@ public class HippodromeTest {
         assertArrayEquals(horses1,horses2);
 
     }
-//    @Mock
-//    Horse horse;
-//
-//    @Test
-//    public void expectedMethodMove50timesWithListMockHorses(){
-//
-//        List<Horse> list = new ArrayList<>();
-//        for (int i = 0; i <50; i++) {
-//            list.add(horse);
-//        }
-//
-//        Hippodrome hippodrome = new Hippodrome(list);
-//        hippodrome.move();
-//
-//       Mockito.verify(horse, times(list.size())).move();
-//
-//    }
+    @Mock
+    Horse horse;
+
+    @Test
+    public void expectedMethodMove50timesWithListMockHorses(){
+
+        List<Horse> list = new ArrayList<>();
+        for (int i = 0; i <50; i++) {
+            list.add(horse);
+        }
+
+        Hippodrome hippodrome = new Hippodrome(list);
+        hippodrome.move();
+
+       Mockito.verify(horse, times(list.size())).move();
+
+    }
 
 
     @Test

@@ -11,6 +11,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import java.awt.datatransfer.StringSelection;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.ArgumentMatchers.anyDouble;
 
 @ExtendWith(MockitoExtension.class)
 public class HorseTest {
@@ -102,6 +103,12 @@ public class HorseTest {
 
     @Test
     public void shouldMockGetRandomDoubleInMove() {
+        try(MockedStatic<Horse> mockStatic1 = Mockito.mockStatic(Horse.class)) {
+            mockStatic1.when(() -> Horse.getRandomDouble(anyDouble(), anyDouble())).thenReturn(11.0);
+            Horse horse = new Horse("George", 1.0, 1.0);
+            horse.move();
+            assertEquals(12.0, horse.getDistance());
+        }
 
     }
 
