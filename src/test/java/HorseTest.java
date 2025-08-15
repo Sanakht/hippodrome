@@ -97,7 +97,7 @@ public class HorseTest {
             Horse horse = new Horse("George", 1.0, 1.0);
             horse.move();
 
-            mockStatic1.verify(() -> horse.getRandomDouble(0.2, 0.9));
+            mockStatic1.verify(() -> Horse.getRandomDouble(0.2, 0.9));
         }
     }
 
